@@ -39,4 +39,9 @@ A MEAN stack app for managing to-do lists with full CRUD functionality
    ```
    npm install mongoose --save-dev
    ```
-6.
+
+---
+
+### Get Started with Atlas:
+
+Reference: https://www.mongodb.com/docs/atlas/getting-started/
