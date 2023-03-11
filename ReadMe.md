@@ -4,7 +4,7 @@
 
 ### About:
 
-A MEAN stack app for managing to-do lists with full CRUD functionality
+A MEAN stack app for managing to-do lists with full CRUD functionality.
 
 ---
 
@@ -23,21 +23,21 @@ A MEAN stack app for managing to-do lists with full CRUD functionality
    ```
    npm init
    ```
-2. Installs the Express.js framework and SAVE it as a DEVelopment dependency (won't be used in production) in the `package.json` file:
+2. Installs the Express.js framework and SAVE it as a dependency (and will be used in production) in the `package.json` file:
    ```
-   npm install express --save-dev
+   npm install express --save
    ```
-3. Install the template engine EJS (Embedded JavaScript) module and SAVE it as a DEVelopment dependency in the `package.json` file:
+3. Install the template engine EJS (Embedded JavaScript) module and SAVE it as a dependency in the `package.json` file:
    ```
-   npm install ejs --save-dev
+   npm install ejs --save
    ```
-4. Install the Node.js middleware module `body-parser` and SAVE it as a DEVelopment dependency in the package.json file:
+4. Install the Node.js middleware module `body-parser` and SAVE it as a dependency in the package.json file:
    ```
-   npm install body-parser --save-dev
+   npm install body-parser --save
    ```
 5. Install Mongoose (a library that simplifies the process of working with MongoDB by providing a schema-based solution for modeling data):
    ```
-   npm install mongoose --save-dev
+   npm install mongoose --save
    ```
 
 ---

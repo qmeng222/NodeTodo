@@ -28,38 +28,46 @@ module.exports = function (app) {
 
   // POST:
   app.post("/api/todo", function (req, res) {
+    // if there is an id in the req body, update that todo object:
     if (req.body.id) {
-      Todos.findByIdAndUpdate(
-        req.body.id,
-        {
-          todo: req.body.todo,
-          isDone: req.body.isDone,
-          hasAttachment: req.body.hasAttachment,
-        },
-        function (err, todo) {
-          if (err) throw err;
+      Todos.findByIdAndUpdate(req.body.id, {
+        todo: req.body.todo,
+        isDone: req.body.isDone,
+        hasAttachment: req.body.hasAttachment,
+      })
+        .then(function (todo) {
           res.send("Success");
-        }
-      );
+        })
+        .catch((err) => {
+          throw err;
+        });
     } else {
+      // create a new todo:
       var newTodo = Todos({
         username: "qmeng222",
         todo: req.body.todo,
         isDone: req.body.isDone,
         hasAttachment: req.body.hasAttachment,
       });
-      newTodo.save(function (err) {
-        if (err) throw err;
-        res.send("Success");
-      });
+      newTodo
+        .save()
+        .then(() => {
+          res.send("Success");
+        })
+        .catch((err) => {
+          throw err;
+        });
     }
   });
 
   // DELETE:
   app.delete("/api/todo", function (req, res) {
-    Todos.findByIdAndRemove(req.body.id, function (err) {
-      if (err) throw err;
-      res.send("Success");
-    });
+    Todos.findByIdAndRemove(req.body.id)
+      .then(() => {
+        res.send("Success");
+      })
+      .catch((err) => {
+        throw err;
+      });
   });
 };
